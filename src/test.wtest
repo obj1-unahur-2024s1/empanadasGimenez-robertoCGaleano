@@ -1,0 +1,22 @@
+import empleados.*
+import encargado.*
+test "gimenez paga a galvan" {
+	gimenez.pagarA(galvan)
+	assert.that(galvan.totalDinero()== 150000)
+
+}
+
+test "galvan gasta 50000" {
+	gimenez.pagarA(galvan)
+	galvan.gastar(50000)
+	assert.equals(100000, galvan.totalDinero())
+
+}
+
+test "galvan gasta 50000 mas" {
+	gimenez.pagarA(galvan)
+	galvan.gastar(50000)
+	galvan.gastar(50000)
+	assert.notThat(galvan.totalDinero()==0)
+
+}
